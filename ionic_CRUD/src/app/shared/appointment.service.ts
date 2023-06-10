@@ -11,19 +11,13 @@ import {
 export class AppointmentService {
   bookingListRef: AngularFireList<any>;
   bookingRef: AngularFireObject<any>;
-  constructor(private db: AngularFireDatabase) {this.bookingListRef = this.db.list('/appointment')}
+  constructor(private db: AngularFireDatabase) {}
   // Create
   createBooking(apt: Appointment) {
     return this.bookingListRef.push({
       name: apt.name,
       email: apt.email,
       mobile: apt.mobile,
-      nota1: apt.nota1,
-      nota2: apt.nota2,
-      nota3: apt.nota3,
-      nota4: apt.nota4,
-      nota5: apt.nota5,
-      total: apt.total,
     });
   }
   // Get Single
